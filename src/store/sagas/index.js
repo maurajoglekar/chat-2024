@@ -1,7 +1,10 @@
-import { all } from 'redux-saga/effects'
-import userSaga from './userSaga';
+import { all } from "redux-saga/effects";
+import userSaga from "./userSaga";
+import roomSaga from "./roomSaga";
 function* rootSaga() {
-    yield all([userSaga()])
+  //   yield all([userSaga()]), yield all([roomSaga()]);
+  yield all([roomSaga()]);
+  yield all([userSaga()]);
 }
 
 export default rootSaga;
