@@ -1,0 +1,9 @@
+import axios from "axios";
+const url = "https://jsonplaceholder.typicode.com/users";
+export const fetchUsers = () => axios.get(url);
+export const fetchUser = (id) => axios.get(`${url}/${id}`);
+
+// Url for my server on render
+const myurl = "https://mjserver.onrender.com/api/rooms";
+export const fetchRooms = () => axios.get(myurl);
+export const fetchRoom = (id) => axios.get(`${myurl}/${id}`);
