@@ -1,12 +1,17 @@
 import React from "react";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
-import App from "./App";
 import { Header } from "./Header";
 import { ThemeProvider } from "styled-components";
 import { GlobalStyles } from "./Globals.styled";
-// import ChatConsole from "./container/ChatConsole";
-// import Login from "./views/LoginForm";
+import LoginForm from "./components/chat/LoginForm";
+import ChatConsole from "./components/chat/ChatConsole";
+import styled from "styled-components";
 
+const ComponentsContainer = styled.div`
+  display: flex;
+  justify-content: top;
+  align-items: center;
+`;
 function AppRouter() {
   const theme = {
     colors: {
@@ -25,13 +30,14 @@ function AppRouter() {
       <ThemeProvider theme={theme}>
         <GlobalStyles />
         <Header />
-        <Routes>
-          <Route path="/" element={<App />} />
-          <Route path="/catalog-viewer" element={<h1>Catalog Viewer</h1>} />
-          <Route path="/kanban" element={<h1>Kanban Dashboard</h1>} />
-          {/* <Route exact component={Login} path="/" />
-      <Route component={ChatConsole} path="/chat/:userName" /> */}
-        </Routes>
+        <ComponentsContainer>
+          <Routes>
+            <Route path="/" element={<LoginForm />} />
+            <Route path="/chat/:userName" element={<ChatConsole />} />
+            <Route path="/catalog-viewer" element={<h1>Catalog Viewer</h1>} />
+            <Route path="/kanban" element={<h1>Kanban Dashboard</h1>} />
+          </Routes>
+        </ComponentsContainer>
       </ThemeProvider>
     </BrowserRouter>
   );
