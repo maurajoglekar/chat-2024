@@ -1,6 +1,5 @@
 import React from "react";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
-import { Header } from "./Header";
 import { ThemeProvider } from "styled-components";
 import { GlobalStyles } from "./Globals.styled";
 import LoginForm from "./components/chat/LoginForm";
@@ -24,13 +23,10 @@ function AppRouter() {
       <ThemeProvider theme={theme}>
         <GlobalStyles />
         <div class="grid-container">
-          <Header />
           <main>
             <Routes>
               <Route path="/" element={<LoginForm />} />
               <Route path="/chat/:userName" element={<ChatConsole />} />
-              <Route path="/catalog-viewer" element={<h1>Catalog Viewer</h1>} />
-              <Route path="/kanban" element={<h1>Kanban Dashboard</h1>} />
             </Routes>
           </main>
         </div>
