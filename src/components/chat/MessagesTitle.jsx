@@ -20,15 +20,15 @@ const StyledMessagesTitle = styled.div`
 
 const MessagesTitle = ({ name, users, userName }) => {
   let me;
-  let others = "";
-  const temp = users.filter((user) => user !== userName);
+  let othersStr = "";
+  const others = users.filter((user) => user !== userName);
 
-  if (temp.length === users.length) {
-    others = `, ${users.join(", ")}`;
-  } else {
-    me = userName;
-    others = `, ${temp.join(", ")}`;
-  }
+  const noDupOthers = new Set();
+  others.forEach((user) => {
+    noDupOthers.add(user);
+  });
+
+  othersStr = `, ${Array.from(noDupOthers).join(", ")}`;
 
   return (
     <StyledMessagesTitle>
@@ -42,7 +42,7 @@ const MessagesTitle = ({ name, users, userName }) => {
               {me || userName}
             </span>
           ))}
-        <span data-test-id="others">{others}</span>
+        <span data-test-id="others">{othersStr}</span>
       </p>
     </StyledMessagesTitle>
   );

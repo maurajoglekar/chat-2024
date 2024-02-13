@@ -5,7 +5,7 @@ import NavList from "./NavList";
 
 const StyledNav = styled.nav`
   width: 20%;
-  background-color: ${({ theme }) => theme.colors.green};
+  background-color: ${({ theme }) => theme.colors.lightNavyBlue};
   min-width: 200px;
 
   /* common styling for all paragraph's in nav, both in heading and list */

@@ -20,7 +20,7 @@ html{
 
 a{
     text-decoration: none;
-    color: ${({ theme }) => theme.colors.green};
+    color: ${({ theme }) => theme.colors.lightNavyBlue};
     transition: all 250ms ease-in-out;
 
      &:hover{
