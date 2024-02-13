@@ -15,7 +15,7 @@ const StyledChatConsole = styled.div`
 
   section {
     width: 100%;
-    background-color: #ffffff;
+    background-color: ${({ theme }) => theme.colors.white};
   }
 `;
 

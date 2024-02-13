@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const StyledLoginForm = styled.form`
-  background-color: #fff;
+  background-color: ${({ theme }) => theme.colors.white};
   height: 100vh;
   width: 100%;
   display: flex;
@@ -26,7 +26,7 @@ const StyledLoginForm = styled.form`
     height: 36px;
     margin-top: 15px;
     background-color: ${({ theme }) => theme.colors.lightNavyBlue};
-    color: #fff;
+    color: ${({ theme }) => theme.colors.white};
     padding: 0 30px;
   }
 `;

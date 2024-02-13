@@ -24,10 +24,7 @@ const NavHeading = ({ startTime, userName }) => {
   function calculateElapsedMins() {
     const endTime = new Date();
     const timeDiff = endTime - startTime;
-
-    // get elapsed minutes
     const newMins = Math.floor(timeDiff / 60000);
-
     setElapsedMins(newMins);
   }
 

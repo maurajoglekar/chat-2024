@@ -10,7 +10,7 @@ const StyledNav = styled.nav`
 
   /* common styling for all paragraph's in nav, both in heading and list */
   div p {
-    color: #ffffff;
+    color: ${({ theme }) => theme.colors.white};
     padding-left: 25px;
     padding-top: 25px;
     margin: 0;
