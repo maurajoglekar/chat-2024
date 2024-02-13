@@ -3,11 +3,14 @@ import styled from "styled-components";
 const StyledMessagesTitle = styled.div`
   .room-title {
     text-align: center;
-    font-size: 25px;
+    font-size: 22px;
+    margin-top: 8px;
   }
 
   .room-users {
     text-align: center;
+    margin: 1.5em 0;
+    font-size: 14px;
   }
 
   span.my-name {

@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { useState } from "react";
 
 const StyledMessageList = styled.div`
   display: flex;
@@ -51,8 +50,6 @@ const StyledListItem = styled.li`
   }
 `;
 const MessageList = ({ roomId, userName, messages }) => {
-  const [startTime, setStartTime] = useState(new Date());
-
   return (
     <StyledMessageList>
       <ul className="message-list">

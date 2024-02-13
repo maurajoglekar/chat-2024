@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import MessagesTitle from "./MessagesTitle";
 import MessageList from "./MessageList";
+import MessageAddForm from "./MessageAddForm";
 
 const StyledChatContent = styled.div`
   .title-section {
@@ -35,15 +36,15 @@ const ChatContent = ({ roomId, rooms, userName, messages }) => {
           roomId={roomId}
         />
       </section>
-      {/* <section className="add-message-section">
+      <section className="add-message-section">
         <MessageAddForm
-          addRoomMessage={addRoomMessage}
-          messagesEndRef={messagesEndRef}
+          // addRoomMessage={addRoomMessage}
+          // messagesEndRef={messagesEndRef}
+          // scrollToBottom={scrollToBottom}
           roomId={roomId}
-          scrollToBottom={scrollToBottom}
           userName={userName}
         />
-      </section> */}
+      </section>
     </StyledChatContent>
   );
 };
