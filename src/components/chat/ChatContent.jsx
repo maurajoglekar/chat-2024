@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import MessagesTitle from "./MessagesTitle";
+import MessageList from "./MessageList";
 
 const StyledChatContent = styled.div`
   .title-section {
@@ -16,7 +17,7 @@ const StyledChatContent = styled.div`
     border-top: 1px solid #e0e0e0;
   }
 `;
-const ChatContent = ({ roomId, rooms, userName }) => {
+const ChatContent = ({ roomId, rooms, userName, messages }) => {
   const selectedRoom = rooms.find((room) => room.id === roomId);
   const name = selectedRoom && selectedRoom.name ? selectedRoom.name : "";
   const users = selectedRoom && selectedRoom.users ? selectedRoom.users : [];
@@ -25,15 +26,15 @@ const ChatContent = ({ roomId, rooms, userName }) => {
       <section className="title-section">
         <MessagesTitle name={name} userName={userName} users={users} />
       </section>
-      {/* <section className="messages-section">
+      <section className="messages-section">
         <MessageList
-          addRoomMessageReaction={addRoomMessageReaction}
+          // addRoomMessageReaction={addRoomMessageReaction}
           messages={messages}
-          messagesEndRef={messagesEndRef}
+          // messagesEndRef={messagesEndRef}
           userName={userName}
           roomId={roomId}
         />
-      </section> */}
+      </section>
       {/* <section className="add-message-section">
         <MessageAddForm
           addRoomMessage={addRoomMessage}

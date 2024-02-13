@@ -1,13 +1,16 @@
 import styled from "styled-components";
 import { useParams } from "react-router";
 import { useEffect, useState } from "react";
-import { getRoomsStart } from "../../store/slices/roomSlice";
+import {
+  getRoomsStart,
+  getRoomMessagesStart,
+  getRoomStart,
+} from "../../store/slices/roomSlice";
+
 import { createAction } from "@reduxjs/toolkit";
 import { connect, useDispatch } from "react-redux";
 import Nav from "./Nav";
 import ChatContent from "./ChatContent";
-
-const getRoomStart = createAction("room/getRoomStart");
 
 const StyledChatConsole = styled.div`
   display: flex;
@@ -34,6 +37,9 @@ const ChatConsole = ({ chat }) => {
   useEffect(() => {
     dispatch(getRoomStart(roomId));
   }, []);
+  useEffect(() => {
+    dispatch(getRoomMessagesStart(roomId));
+  }, []);
 
   console.log(`The rooms are: ${JSON.stringify(chat ?? chat.rooms)}`);
   console.log(`The room is: ${JSON.stringify(chat)}`);
@@ -53,6 +59,7 @@ const ChatConsole = ({ chat }) => {
           roomId={roomId || 0}
           rooms={chat.rooms}
           userName={userName}
+          messages={chat.messages}
         />
       </section>
     </StyledChatConsole>

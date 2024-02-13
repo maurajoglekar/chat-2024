@@ -4,6 +4,7 @@ const initialState = {
   loading: false,
   error: false,
   room: {},
+  messages: [],
 };
 const roomSlice = createSlice({
   name: "room",
@@ -31,6 +32,17 @@ const roomSlice = createSlice({
       state.loading = false;
       state.error = true;
     },
+    getRoomMessagesStart: (state) => {
+      state.loading = true;
+    },
+    getRoomMessagesSuccess: (state, action) => {
+      state.loading = false;
+      state.messages = action.payload;
+    },
+    getRoomsMessagesFailure: (state) => {
+      state.loading = false;
+      state.error = true;
+    },
   },
 });
 
@@ -42,5 +54,8 @@ export const {
   getRoomStart,
   getRoomSuccess,
   getRoomFailure,
+  getRoomMessagesStart,
+  getRoomMessagesSuccess,
+  getRoomMessagesFailure,
 } = roomSlice.actions;
 export default roomReducer;
