@@ -5,7 +5,6 @@ import { ThemeProvider } from "styled-components";
 import { GlobalStyles } from "./Globals.styled";
 import LoginForm from "./components/chat/LoginForm";
 import ChatConsole from "./components/chat/ChatConsole";
-import styled from "styled-components";
 
 function AppRouter() {
   const theme = {
@@ -24,13 +23,17 @@ function AppRouter() {
     <BrowserRouter>
       <ThemeProvider theme={theme}>
         <GlobalStyles />
-        <Header />
-        <Routes>
-          <Route path="/" element={<LoginForm />} />
-          <Route path="/chat/:userName" element={<ChatConsole />} />
-          <Route path="/catalog-viewer" element={<h1>Catalog Viewer</h1>} />
-          <Route path="/kanban" element={<h1>Kanban Dashboard</h1>} />
-        </Routes>
+        <div class="grid-container">
+          <Header />
+          <main>
+            <Routes>
+              <Route path="/" element={<LoginForm />} />
+              <Route path="/chat/:userName" element={<ChatConsole />} />
+              <Route path="/catalog-viewer" element={<h1>Catalog Viewer</h1>} />
+              <Route path="/kanban" element={<h1>Kanban Dashboard</h1>} />
+            </Routes>
+          </main>
+        </div>
       </ThemeProvider>
     </BrowserRouter>
   );

@@ -61,4 +61,16 @@ hr{
 ::-webkit-scrollbar-thumb:hover{
     background: #202e46;
 }
+
+div.grid-container {
+  display: grid;
+  width: 100vw;
+  height: 100vh;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: 10% 90%;
+}
+
+header, main {
+  grid-column: span 10;
+}
 `;

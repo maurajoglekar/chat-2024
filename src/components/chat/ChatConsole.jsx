@@ -13,7 +13,6 @@ import ChatContent from "./ChatContent";
 
 const StyledChatConsole = styled.div`
   display: flex;
-  min-height: 100vh;
 
   section {
     width: 100%;
