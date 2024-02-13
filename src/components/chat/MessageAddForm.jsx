@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import React, { useState } from "react";
-
+import { useDispatch } from "react-redux";
+import { addRoomMessageStart } from "../../store/slices/roomSlice";
 const StyledMessageAddForm = styled.form`
   display: flex;
   justify-content: space-between;
@@ -33,10 +34,14 @@ const StyledMessageAddForm = styled.form`
 
 const MessageAddForm = ({ roomId, userName }) => {
   const [newMessage, setNewMessage] = useState("");
+  const dispatch = useDispatch();
 
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(`submit add message:  ${newMessage}`);
+    dispatch(
+      addRoomMessageStart({ roomId, name: userName, message: newMessage })
+    );
+    setNewMessage("");
   };
 
   return (

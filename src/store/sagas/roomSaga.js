@@ -26,9 +26,25 @@ function* getRoomMessages(action) {
     yield put(actions.getRoomMessagesFailure());
   }
 }
+function* addRoomMessage(action) {
+  try {
+    // TODO: how do I add all the params: roomId, name, message
+    const { message, name, roomId } = action.payload;
+    const response = yield call(api.addRoomMessage, { roomId, name, message });
+    const objWithMessage = {
+      message,
+      roomId,
+      name,
+    };
+    yield put(actions.addRoomMessageSuccess(objWithMessage));
+  } catch (error) {
+    yield put(actions.addRoomMessageFailure());
+  }
+}
 function* roomSaga() {
   yield takeEvery("room/getRoomsStart", getRooms);
   yield takeEvery("room/getRoomStart", getRoom);
   yield takeEvery("room/getRoomMessagesStart", getRoomMessages);
+  yield takeEvery("room/addRoomMessageStart", addRoomMessage);
 }
 export default roomSaga;

@@ -28,22 +28,10 @@ const ChatContent = ({ roomId, rooms, userName, messages }) => {
         <MessagesTitle name={name} userName={userName} users={users} />
       </section>
       <section className="messages-section">
-        <MessageList
-          // addRoomMessageReaction={addRoomMessageReaction}
-          messages={messages}
-          // messagesEndRef={messagesEndRef}
-          userName={userName}
-          roomId={roomId}
-        />
+        <MessageList messages={messages} userName={userName} roomId={roomId} />
       </section>
       <section className="add-message-section">
-        <MessageAddForm
-          // addRoomMessage={addRoomMessage}
-          // messagesEndRef={messagesEndRef}
-          // scrollToBottom={scrollToBottom}
-          roomId={roomId}
-          userName={userName}
-        />
+        <MessageAddForm roomId={roomId} userName={userName} />
       </section>
     </StyledChatContent>
   );

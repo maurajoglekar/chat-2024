@@ -34,10 +34,10 @@ const StyledListItem = styled.li`
 
   .message-item .message-text {
     color: ${(props) => (props.isMine ? "#FAF0E6" : "gray")};
-    background-color: ${(props) => (props.isMine ? "#FF3008" : "#fff")};
+    background-color: ${(props) => (props.isMine ? "#2D5987" : "#fff")};
     padding: 15px 20px;
     border-radius: 2em;
-    margin-bottom: 0;
+    margin-bottom: 1em;
   }
 
   .message-item .messaged-by {

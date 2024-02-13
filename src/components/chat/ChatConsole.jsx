@@ -7,7 +7,6 @@ import {
   getRoomStart,
 } from "../../store/slices/roomSlice";
 
-import { createAction } from "@reduxjs/toolkit";
 import { connect, useDispatch } from "react-redux";
 import Nav from "./Nav";
 import ChatContent from "./ChatContent";
@@ -54,8 +53,6 @@ const ChatConsole = ({ chat }) => {
       />
       <section>
         <ChatContent
-          // addRoomMessage={addRoomMessage}
-          // addRoomMessageReaction={addRoomMessageReaction}
           roomId={roomId || 0}
           rooms={chat.rooms}
           userName={userName}

@@ -43,6 +43,17 @@ const roomSlice = createSlice({
       state.loading = false;
       state.error = true;
     },
+    addRoomMessageStart: (state) => {
+      state.loading = true;
+    },
+    addRoomMessageSuccess: (state, action) => {
+      state.loading = false;
+      state.messages = [...state.messages, action.payload];
+    },
+    addRoomMessagesFailure: (state) => {
+      state.loading = false;
+      state.error = true;
+    },
   },
 });
 
@@ -57,5 +68,8 @@ export const {
   getRoomMessagesStart,
   getRoomMessagesSuccess,
   getRoomMessagesFailure,
+  addRoomMessageStart,
+  addRoomMessageSuccess,
+  addRoomMessageFailure,
 } = roomSlice.actions;
 export default roomReducer;

@@ -24,10 +24,10 @@ const MessagesTitle = ({ name, users, userName }) => {
   const temp = users.filter((user) => user !== userName);
 
   if (temp.length === users.length) {
-    others = users.join(", ");
+    others = `, ${users.join(", ")}`;
   } else {
     me = userName;
-    others = temp.join(", ");
+    others = `, ${temp.join(", ")}`;
   }
 
   return (
@@ -40,7 +40,6 @@ const MessagesTitle = ({ name, users, userName }) => {
           (userName && (
             <span className="my-name" data-test-id="self">
               {me || userName}
-              {", "}
             </span>
           ))}
         <span data-test-id="others">{others}</span>
