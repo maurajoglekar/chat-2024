@@ -20,7 +20,7 @@ const StyledChatContent = styled.div`
 const ChatContent = ({ roomId, rooms, userName, messages }) => {
   const selectedRoom = rooms.find((room) => room.id === roomId);
   const name = selectedRoom && selectedRoom.name ? selectedRoom.name : "";
-  const users = selectedRoom && selectedRoom.users ? selectedRoom.users : [];
+  const users = messages.map((message) => message.name);
   return (
     <StyledChatContent>
       <section className="title-section">

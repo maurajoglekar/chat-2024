@@ -37,6 +37,7 @@ const MessagesTitle = ({ name, users, userName }) => {
           (userName && (
             <span className="my-name" data-test-id="self">
               {me || userName}
+              {", "}
             </span>
           ))}
         <span data-test-id="others">{others}</span>

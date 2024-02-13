@@ -3,13 +3,15 @@ import { useState } from "react";
 
 const StyledNavList = styled.div`
   p {
-    height: 48px;
+    height: 60px;
+    font-size: 18px;
   }
 
   p.selected-room {
     background-color: ${({ theme }) => theme.colors.orange};
   }
 `;
+
 const NavList = ({ roomId, rooms, updateRoom }) => {
   return (
     <StyledNavList>

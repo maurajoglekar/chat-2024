@@ -36,10 +36,10 @@ const ChatConsole = ({ chat }) => {
   }, []);
   useEffect(() => {
     dispatch(getRoomStart(roomId));
-  }, []);
+  }, [roomId]);
   useEffect(() => {
     dispatch(getRoomMessagesStart(roomId));
-  }, []);
+  }, [roomId]);
 
   console.log(`The rooms are: ${JSON.stringify(chat ?? chat.rooms)}`);
   console.log(`The room is: ${JSON.stringify(chat)}`);
