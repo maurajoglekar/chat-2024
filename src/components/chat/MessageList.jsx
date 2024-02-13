@@ -49,7 +49,7 @@ const StyledListItem = styled.li`
     font-size: 18px;
   }
 `;
-const MessageList = ({ roomId, userName, messages }) => {
+const MessageList = ({ userName, messages, messagesEndRef }) => {
   return (
     <StyledMessageList>
       <ul className="message-list">
@@ -64,7 +64,7 @@ const MessageList = ({ roomId, userName, messages }) => {
           </StyledListItem>
         ))}
       </ul>
-      {/* <div ref={messagesEndRef} /> */}
+      <div ref={messagesEndRef} />
     </StyledMessageList>
   );
 };

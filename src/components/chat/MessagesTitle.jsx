@@ -23,11 +23,7 @@ const MessagesTitle = ({ name, users, userName }) => {
   let othersStr = "";
   const others = users.filter((user) => user !== userName);
 
-  const noDupOthers = new Set();
-  others.forEach((user) => {
-    noDupOthers.add(user);
-  });
-
+  const noDupOthers = new Set(others);
   othersStr = `, ${Array.from(noDupOthers).join(", ")}`;
 
   return (
