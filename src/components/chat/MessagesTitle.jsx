@@ -33,11 +33,12 @@ const MessagesTitle = ({ name, users, userName }) => {
         {name}
       </p>
       <p className="room-users" data-test-id="room-users">
-        {me && me.length > 0 && (
-          <span className="my-name" data-test-id="self">
-            {me},{" "}
-          </span>
-        )}
+        {me ||
+          (userName && (
+            <span className="my-name" data-test-id="self">
+              {me || userName}
+            </span>
+          ))}
         <span data-test-id="others">{others}</span>
       </p>
     </StyledMessagesTitle>
