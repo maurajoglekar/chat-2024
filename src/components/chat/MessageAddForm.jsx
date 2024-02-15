@@ -38,10 +38,12 @@ const MessageAddForm = ({ roomId, userName }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(
-      addRoomMessageStart({ roomId, name: userName, message: newMessage })
-    );
-    setNewMessage("");
+    if (newMessage.length > 0) {
+      dispatch(
+        addRoomMessageStart({ roomId, name: userName, message: newMessage })
+      );
+      setNewMessage("");
+    }
   };
 
   return (
